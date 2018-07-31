@@ -12,6 +12,8 @@
 		264F5836210D51A800BC8758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264F5834210D51A800BC8758 /* Main.storyboard */; };
 		264F5838210D51AC00BC8758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264F5837210D51AC00BC8758 /* Assets.xcassets */; };
 		264F583B210D51AC00BC8758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264F5839210D51AC00BC8758 /* LaunchScreen.storyboard */; };
+		2677139B210E66DD006483CB /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677139A210E66DD006483CB /* Concentration.swift */; };
+		2677139D210E67A2006483CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2677139C210E67A2006483CB /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		264F5837210D51AC00BC8758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		264F583A210D51AC00BC8758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		264F583C210D51AC00BC8758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2677139A210E66DD006483CB /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		2677139C210E67A2006483CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		264F582F210D51A800BC8758 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				264F5830210D51A800BC8758 /* AppDelegate.swift */,
+				264F5842210D52E100BC8758 /* Supporting files */,
 				264F5832210D51A800BC8758 /* ViewController.swift */,
 				264F5834210D51A800BC8758 /* Main.storyboard */,
-				264F5837210D51AC00BC8758 /* Assets.xcassets */,
-				264F5839210D51AC00BC8758 /* LaunchScreen.storyboard */,
+				2677139A210E66DD006483CB /* Concentration.swift */,
+				2677139C210E67A2006483CB /* Card.swift */,
 				264F583C210D51AC00BC8758 /* Info.plist */,
 			);
 			path = Concentration;
+			sourceTree = "<group>";
+		};
+		264F5842210D52E100BC8758 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				264F5830210D51A800BC8758 /* AppDelegate.swift */,
+				264F5837210D51AC00BC8758 /* Assets.xcassets */,
+				264F5839210D51AC00BC8758 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			files = (
 				264F5833210D51A800BC8758 /* ViewController.swift in Sources */,
 				264F5831210D51A800BC8758 /* AppDelegate.swift in Sources */,
+				2677139B210E66DD006483CB /* Concentration.swift in Sources */,
+				2677139D210E67A2006483CB /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +297,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5HP7TDLM9;
 				INFOPLIST_FILE = Concentration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Beta.Concentration;
+				PRODUCT_BUNDLE_IDENTIFIER = "Beta.Concentration-BenjaMunoz-.1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,12 +315,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5HP7TDLM9;
 				INFOPLIST_FILE = Concentration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Beta.Concentration;
+				PRODUCT_BUNDLE_IDENTIFIER = "Beta.Concentration-BenjaMunoz-.1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
