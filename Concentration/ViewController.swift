@@ -20,8 +20,21 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var flipCountLabel: UILabel!
     
+    @IBOutlet weak var restartButton: UIButton!
     
     @IBOutlet var cardButtons: [UIButton]!
+    
+    
+    @IBAction func touchRestart(_ sender: UIButton) {
+        if game.numberOfPairsOfCardsNotMatched == 0{
+            flipCount = 0
+            restartButton.isHidden = true
+            emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎","👹","💀","🧟‍♂️"]
+            game = Concentration(numberOfPairsOfCards: cardButtons.count/2)
+            updateViewFromModel()
+            
+        }
+    }
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
@@ -47,9 +60,13 @@ class ViewController: UIViewController {
             }
         }
         
+        if game.numberOfPairsOfCardsNotMatched == 0{
+            print("Restart button appeared")
+            restartButton.isHidden = false
+        }
     }
         
-        var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
+        var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎","👹","💀","🧟‍♂️"]
         var emojis = [Int:String]()
         
         func emoji(for card: Card) -> String {

@@ -11,7 +11,7 @@ import Foundation
 class Concentration {
     
     var cards = [Card]()
-    
+    var numberOfPairsOfCardsNotMatched: Int
     var indexOfOneAndOnlyFaceUpCard: Int?  //optional pues podria no haber una carta boca arriba! Tendria valor "not set"
     
     func chooseCard(at index: Int)
@@ -22,6 +22,8 @@ class Concentration {
                 if cards[matchIndex].identifier == cards[index].identifier{
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    self.numberOfPairsOfCardsNotMatched -= 1
+                    print(self.numberOfPairsOfCardsNotMatched)
                 }
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = nil
@@ -35,14 +37,20 @@ class Concentration {
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
+        
+        if numberOfPairsOfCardsNotMatched == 0 {
+            print("Fin del juego")
+        }
+        
     }
     
     init(numberOfPairsOfCards: Int) {
         for _ in 0..<numberOfPairsOfCards{
-        let card = Card()
-        //let matchingCard = card se copia, no referencia la variable
-        cards += [card,card]
+            let card = Card()
+            //let matchingCard = card se copia, no referencia la variable
+            cards += [card,card]
+        }
+        self.numberOfPairsOfCardsNotMatched = numberOfPairsOfCards
     }
-
-}
+    
 }
