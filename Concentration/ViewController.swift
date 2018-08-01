@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet var cardButtons: [UIButton]!
     
     
+    
     @IBAction func touchRestart(_ sender: UIButton) {
         if game.numberOfPairsOfCardsNotMatched == 0{
             flipCount = 0
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
+        
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]

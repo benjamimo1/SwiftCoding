@@ -11,6 +11,7 @@ import Foundation
 class Concentration {
     
     var cards = [Card]()
+    var preCards = [Card]()
     var numberOfPairsOfCardsNotMatched: Int
     var indexOfOneAndOnlyFaceUpCard: Int?  //optional pues podria no haber una carta boca arriba! Tendria valor "not set"
     
@@ -48,8 +49,14 @@ class Concentration {
         for _ in 0..<numberOfPairsOfCards{
             let card = Card()
             //let matchingCard = card se copia, no referencia la variable
-            cards += [card,card]
+            preCards += [card,card]
         }
+        
+        while preCards.count > 0{
+            let randomIndex = Int(arc4random_uniform(UInt32(preCards.count)))
+            cards.append(preCards.remove(at: randomIndex))
+        }
+        
         self.numberOfPairsOfCardsNotMatched = numberOfPairsOfCards
     }
     
