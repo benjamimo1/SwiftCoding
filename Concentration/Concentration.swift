@@ -10,10 +10,10 @@ import Foundation
 
 class Concentration {
     
-    var cards = [Card]()
+    private(set) var cards = [Card]()  //UI puede ver las cartas pero no modificar valores¡
     var preCards = [Card]()
     var numberOfPairsOfCardsNotMatched: Int
-    var indexOfOneAndOnlyFaceUpCard: Int?{
+    private var indexOfOneAndOnlyFaceUpCard: Int?{
         get{
             var foundIndex: Int?
             for index in cards.indices {
@@ -37,8 +37,8 @@ class Concentration {
     
     //optional pues podria no haber una carta boca arriba! Tendria valor "not set"
     
-    func chooseCard(at index: Int)
-    {
+    func chooseCard(at index: Int){
+        assert(cards.indices.contains(index),"Concentration.chooseCards(at: \(index)): chosen index not in cards")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index{
                 //check if cards match
@@ -62,6 +62,7 @@ class Concentration {
     }
     
     init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0,"Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
         for _ in 0..<numberOfPairsOfCards{
             let card = Card()
             //let matchingCard = card se copia, no referencia la variable
