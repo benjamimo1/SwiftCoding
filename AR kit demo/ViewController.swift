@@ -18,11 +18,8 @@ class ViewController: UIViewController {
         addBox()
         addTapGestureToSceneView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    //Se especifica comportamiento de la app al verse, dejarse en background
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,16 +32,14 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
     
-
-    
     
     @objc func didTap(withGestureRecognizer recognizer: UIGestureRecognizer) {
         let tapLocation = recognizer.location(in: sceneView)
-        let hitTestResults = sceneView.hitTest(tapLocation)
-        guard let node = hitTestResults.first?.node
+        let hitTestResults = sceneView.hitTest(tapLocation)  //se revisa si la ubicación del tap es logica para la scene en cuestion
+        guard let node = hitTestResults.first?.node  // ARkit revisa si encuentra superficies sobre las cuales ubicar objetos, "hits". Se usa la primera que encontremos
             else {
-                let hitTestResultsWithFeaturePoints = sceneView.hitTest(tapLocation, types: .featurePoint)
-                
+                let hitTestResultsWithFeaturePoints = sceneView.hitTest(tapLocation, types: .featurePoint) // Searches for real-world objects or AR anchors
+
                 if let hitTestResultWithFeaturePoints = hitTestResultsWithFeaturePoints.first {
                     let translation = hitTestResultWithFeaturePoints.worldTransform.translation
                     addBox(x: translation.x, y: translation.y, z: translation.z)
